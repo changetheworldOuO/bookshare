@@ -1,0 +1,21 @@
+.tipwarning {
+    position: absolute;
+}
+
+.tipwarning2 {
+    position: absolute;
+    margin-left: 250px; 
+}
+
+  input[type="text"],input[type="password"]
+  {
+  	width:360px;
+  }
+  
+  #register,#reset
+  {
+	width:150px;
+  	height:36px;
+  	background-color:#f86e0b;
+  	color:white;
+  }

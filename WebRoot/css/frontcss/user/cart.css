@@ -1,0 +1,12 @@
+.confirm {
+    float: right;
+    width: 100%;
+    background: #cecece;
+}
+
+.buttons {
+    display: block;
+    position: relative;
+    float: right;
+    padding-right: 60px;
+}

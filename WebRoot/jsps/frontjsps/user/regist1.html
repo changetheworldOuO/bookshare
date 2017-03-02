@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head> 
+    <title>注册界面</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+    <script type="text/javascript" src="../../../js/frontjs/user/register.js"></script>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../resources/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/frontcss/user/regist.css">
+  </head>
+  
+  <body>
+
+  <div class="container">
+    <div style="margin-top:20px;">
+        <h1 style="color:#f86e0b;display:inline;">BookShare</h1>&nbsp;&nbsp;&nbsp;
+        <h3 style="display:inline;">用户注册</h3>
+    </div>
+    <div style="margin-top:20px;">
+        <table align="center" class="table table-condensed"  style="width:100%;">
+            <thead>
+                <tr>
+                  <th width="150px"><span id="step1" style="color:#f86e0b;margin-left:120px;">填写用户信息 <span class="badge">1</span>
+                  </span></th>
+                  <th width="150px"><span id="step2" style="margin-left:120px;">发送邮箱激活 <span class="badge">2</span></span> </th>
+                  <th width="150px"><span id="step3" style="margin-left:80px;">注册成功 <span class="badge">3</span></span></th>
+                </tr>
+            </thead>
+        </table>
+        <div style="width:165px;height:5px;background-color:#f86e0b;margin-top:-22px;margin-left:100px;"></div>
+    </div>
+
+    <div style="margin-top:30px;">
+        <form class="form-horizontal" role="form" action="" method="post" onsubmit="return checkForm();">
+            <div class="form-group">
+                <div class="col-xs-2 col-sm-5 col-md-5" align="center">
+                    <button class="btn btn-info btn-lg" style="float:right;">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </button>
+                </div>
+                <input name="username" type="text" class="col-sm-7 form-control tooltip-show " id="username" data-placement="top" data-toggle="tooltip"  placeholder="UserName" tabindex="1" 
+                            title="用户的唯一标识，不超过10位,输入一个有个性的用户名吧~"  onblur="checkUsername();" onclick="tipUsername();" autofocus><span id="s1" class="tooltip-show tipwarning" data-placement="right" data-toggle="tooltip" 
+                        title="用户名不能为空"></span>
+                <label class="control-label"><span id="span1"></span></label>
+            </div>
+
+            <div class="form-group">
+                <div class="col-xs-2 col-sm-5 col-md-5" align="center">
+                    <button class="btn btn-info btn-lg" style="float:right;">
+                        <span class="glyphicon glyphicon-adjust"></span>
+                    </button>
+                </div>
+               <div class="switchsex" style="margin-left:50px;">
+                    <label class="checkbox-inline">
+                        <input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="option1" checked>&nbsp;&nbsp;男
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="radio" name="optionsRadiosinline" id="optionsRadios4"  value="option2">&nbsp;&nbsp;女
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="col-xs-2 col-sm-5 col-md-5" align="center">
+                    <button class="btn btn-info btn-lg" style="float:right;">
+                        <span class="glyphicon glyphicon-lock"></span>
+                    </button>
+                </div>
+                <input type="password" class="col-sm-7 form-control tooltip-show" id="password"  data-placement="top" data-toggle="tooltip"  placeholder="PassWord" 
+                            title="英文和数字的组合，6-12位" tabindex="2" onblur="checkPassword();"
+                            onfocus="tipPassword();"><span id="s2" class="tooltip-show tipwarning" 
+                            data-placement="right" data-toggle="tooltip" title="密码不能为空"></span>
+            </div>
+
+            <div class="form-group">
+                <div class="col-xs-2 col-sm-5 col-md-5" align="center">
+                    <button class="btn btn-info btn-lg" style="float:right;">
+                        <span class="glyphicon glyphicon-lock"></span>
+                    </button>
+                </div>
+                    <input type="password" class="col-sm-7 form-control" id="repassword" placeholder="请再次输入密码确认" data-placement="top" data-toggle="tooltip" 
+                            title="再输入一遍~" tabindex="3" onblur="checkPassword2();"
+                            onfocus="tipPassword2();"><span id="s11" class="tooltip-show tipwarning" 
+                            data-placement="right" data-toggle="tooltip" title="确认密码不能为空"></span><span id="s12" class="tooltip-show tipwarning" 
+                            data-placement="right" data-toggle="tooltip" title="两次输入密码不一致"></span>
+            </div>
+
+            <div class="form-group">
+                <div class="col-xs-2 col-sm-5 col-md-5" align="center">
+                    <button class="btn btn-info btn-lg" style="float:right;">
+                        <span class="glyphicon glyphicon-envelope"></span>
+                    </button>
+                </div>
+                <input type="text" class="col-sm-7 form-control tooltip-show" id="email" data-placement="top" data-toggle="tooltip"  placeholder="Email Address" title="输入有效的Email地址" 
+                             tabindex="4" onblur="checkEmail();" onfocus="tipEmail();"><span id="s3" 
+                             class="tooltip-show tipwarning" data-placement="right" data-toggle="tooltip"  title="邮箱不能为空">
+                             </span><span id="s4" class="tooltip-show tipwarning" data-placement="right" data-toggle="tooltip" 
+                              title="邮箱格式错误"></span><span id="s5" class="tooltip-show tipwarning" data-placement="right" 
+                             data-toggle="tooltip" title="格式正确"></span>
+            </div>
+
+            <div class="form-group">
+                <div class="col-xs-2 col-sm-5 col-md-5" align="center">
+                    <button class="btn btn-info btn-lg" style="float:right;">
+                        <span class="glyphicon glyphicon-phone"></span>
+                    </button>
+                </div>
+                <input type="text" class="col-sm-7 form-control tooltip-show" id="phone" placeholder="能够联系到您的电话号码"data-placement="top" data-toggle="tooltip" title="输入有效的Email地址" 
+                             tabindex="5" onblur="checkPhone();" onfocus="tipPhone();"><span id="s7" 
+                             class="tooltip-show tipwarning" data-placement="right" data-toggle="tooltip"  title="电话不能为空">
+                             </span><span id="s8" class="tooltip-show tipwarning" data-placement="right" data-toggle="tooltip" 
+                              title="电话格式错误"></span><span id="s9" class="tooltip-show tipwarning" data-placement="right" 
+                             data-toggle="tooltip" title="格式正确"></span>
+            </div>
+
+            <div class="form-group">
+                <div class="col-xs-2 col-sm-5 col-md-5" align="center">
+                    <button class="btn btn-info btn-lg" style="float:right;">
+                        <span class="glyphicon glyphicon-globe"></span>
+                    </button>
+                </div>
+                <input type="text" class="col-sm-7 form-control tooltip-show" id="address" placeholder="能够定位您的有效地址" data-placement="top" data-toggle="tooltip" 
+                            title="输入有效地址哦，方便图书交换~" tabindex="6" onblur="checkAddress();"
+                            onfocus="tipAddress();"><span id="s10" class="tooltip-show tipwarning" 
+                            data-placement="right" data-toggle="tooltip" title="地址不能为空"></span>
+            </div>
+
+            <div class="form-group" style="margin-top:30px;">
+                <div class="col-sm-4"></div>
+                    <button id="reset" type="button" class="col-sm-2 btn">重新填写</button>
+                <div class="col-sm-2"></div>
+                    <button id="register" type="submit" class="col-sm-2 btn">马上注册</button>
+                <div class="col-sm-2"></div>
+            </div>
+        </form>
+    </div>
+</div>
+ <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+	<!--当没有网时，加载本地的-->
+    <script src="../../../resources/plugins/bootstrap/js/jquery.min.js"></script>
+    <script src="../../../resources/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> 
+    <script src="../../../js/frontjs/user/regist.js"></script>
+ 
+  </body>
+</html>
