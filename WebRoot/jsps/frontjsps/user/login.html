@@ -28,6 +28,7 @@
                 <form role="form" action="" method="post" onsubmit="return checkForm();">
                     <h1 style="color:orange;">BookShare<small>平台登录</small></h1>
                     <hr class="colorgraph">
+                    <div><s:actionerror /></div>
                     <div class="form-group">
                        <div class="col-xs-2 col-sm-1 col-md-1" style="margin-left:-15px;">
                             <button class="btn btn-info btn-lg">
@@ -35,7 +36,7 @@
                             </button>
                         </div>
                         <div class="col-xs-10 col-sm-11 col-md-11" style="margin-left:15px;">
-                            <input type="text" name="username" id="username" class="form-control input-lg tooltip-show" 
+                            <input type="text" name="nickname" id="nickname" class="form-control input-lg tooltip-show" 
                             data-placement="top" data-toggle="tooltip"  placeholder="UserName" tabindex="1" 
                             title="输入您的用户名"  onblur="checkUsername();" onclick="tipUsername();" autofocus>
                             <span id="s1" class="tooltip-show tipwarning" data-placement="top" data-toggle="tooltip" 
@@ -56,32 +57,15 @@
                             data-placement="top" data-toggle="tooltip" title="密码不能为空"></span>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-xs-2 col-sm-1 col-md-1" style="margin-left:-15px;">
-                            <button class="btn btn-info btn-lg">
-                                <span class="glyphicon glyphicon-globe"></span>
-                            </button>
-                        </div>
-                        <div class="col-xs-10 col-sm-11 col-md-11" style="margin-left:15px;">
-                             <input type="email" name="email" id="email" class="form-control input-lg tooltip-show" 
-                             data-placement="top" data-toggle="tooltip"  placeholder="Email Address" title="输入有效的Email地址" 
-                             tabindex="3" onblur="checkEmail();" onfocus="tipEmail();"><span id="s3" 
-                             class="tooltip-show tipwarning" data-placement="top" data-toggle="tooltip"  title="邮箱不能为空">
-                             </span><span id="s4" class="tooltip-show tipwarning" data-placement="top" data-toggle="tooltip" 
-                              title="邮箱格式错误"></span><span id="s5" class="tooltip-show tipwarning" data-placement="top" 
-                             data-toggle="tooltip" title="格式正确"></span>
-                        </div>                       
-                    
-                    </div>
                     <div class="row"  style="margin-left: -5px;">
                         <div class="col-sm-offset-1 col-md-offset-1 col-xs-6 col-sm-8 col-md-7">
                             <div class="form-group">
-                                <input type="text" name="verifycode" id="verifycode_input" class="form-control input-lg tooltip-show" placement="right" data-toggle="tooltip"  placeholder="VerifyCode" title="输入验证码完成登录" tabindex="4" onblur="checkVerifyCode();" onfocus="tipVerifyCode();"><span id="s6" class="tooltip-show tipwarning2" data-placement="top" data-toggle="tooltip"  title="验证码不能为空"></span><span id="s7" class="tooltip-show tipwarning2" data-placement="top" data-toggle="tooltip"  title="验证码错误"></span>
+                                <input type="text" name="checkcode" id="checkcode" class="form-control input-lg tooltip-show" placement="right" data-toggle="tooltip"  placeholder="VerifyCode" title="输入验证码完成登录" tabindex="4" onblur="checkVerifyCode();" onfocus="tipVerifyCode();" maxlength="4" autocomplete="off"><span id="s6" class="tooltip-show tipwarning2" data-placement="top" data-toggle="tooltip" title="验证码不能为空"></span><span id="s7" class="tooltip-show tipwarning2" data-placement="top" data-toggle="tooltip" title="验证码错误"></span>
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-3 col-md-4" style="margin-left:-15px;">
+                        <div class="col-xs-6 col-sm-3 col-md-4" style="margin-left:-50px;margin-top:8px;">
                             <div class="form-group">
-                                <input type="text" name="verifycode" id="verifycode" class="form-control input-lg" placeholder="1234" tabindex="5">
+                                <img id="checkImg" class="captchaImage" src="${pageContext.request.contextPath}/checkImg.action" onclick="change()" title="点击更换验证码">
                             </div>
                         </div>
                     </div>
@@ -100,12 +84,12 @@
                     <hr class="colorgraph">
                     <div class="row">
                         <div class="col-xs-6 col-md-6"><input type="submit" value="Sign In" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
-                        <div class="col-xs-6 col-md-6"><a href="#" class="btn btn-success btn-block btn-lg" >Register</a></div>
+                        <div class="col-xs-6 col-md-6"><a href="../user/regist1.html" class="btn btn-success btn-block btn-lg" >Register</a></div>
                     </div>
                 </form>
             </div>
         </div>
-  
+    </div>
   	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 	<!--当没有网时，加载本地的-->

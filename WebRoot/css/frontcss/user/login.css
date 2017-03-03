@@ -32,3 +32,8 @@
     position: absolute;
     margin-left: 250px; 
 }
+
+.captcha {
+	text-transform: uppercase;
+	ime-mode: disabled;
+}

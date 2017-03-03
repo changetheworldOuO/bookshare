@@ -37,17 +37,17 @@
     </div>
 
     <div style="margin-top:30px;">
-        <form class="form-horizontal" role="form" action="" method="post" onsubmit="return checkForm();">
+        <form class="form-horizontal" role="form" action="${ pageContext.request.contextPath }/user_regist.action" method="post" onsubmit="return checkForm();">
             <div class="form-group">
                 <div class="col-xs-2 col-sm-5 col-md-5" align="center">
                     <button class="btn btn-info btn-lg" style="float:right;">
                         <span class="glyphicon glyphicon-user"></span>
                     </button>
                 </div>
-                <input name="username" type="text" class="col-sm-7 form-control tooltip-show " id="username" data-placement="top" data-toggle="tooltip"  placeholder="UserName" tabindex="1" 
+                <input name="nickname" type="text" class="col-sm-7 form-control tooltip-show " id="nickname" data-placement="top" data-toggle="tooltip"  placeholder="UserName" tabindex="1" 
                             title="用户的唯一标识，不超过10位,输入一个有个性的用户名吧~"  onblur="checkUsername();" onclick="tipUsername();" autofocus><span id="s1" class="tooltip-show tipwarning" data-placement="right" data-toggle="tooltip" 
                         title="用户名不能为空"></span>
-                <label class="control-label"><span id="span1"></span></label>
+                <label class="control-label"><span id="span1" class="glyphicon" style="margin-left:20px;"></span></label>
             </div>
 
             <div class="form-group">
@@ -58,10 +58,10 @@
                 </div>
                <div class="switchsex" style="margin-left:50px;">
                     <label class="checkbox-inline">
-                        <input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="option1" checked>&nbsp;&nbsp;男
+                        <input type="radio" name="sex" id="optionsRadios3" value="0" checked>&nbsp;&nbsp;男
                     </label>
                     <label class="checkbox-inline">
-                        <input type="radio" name="optionsRadiosinline" id="optionsRadios4"  value="option2">&nbsp;&nbsp;女
+                        <input type="radio" name="sex" id="optionsRadios4"  value="1">&nbsp;&nbsp;女
                     </label>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                         <span class="glyphicon glyphicon-lock"></span>
                     </button>
                 </div>
-                <input type="password" class="col-sm-7 form-control tooltip-show" id="password"  data-placement="top" data-toggle="tooltip"  placeholder="PassWord" 
+                <input type="password" name="password" class="col-sm-7 form-control tooltip-show" id="password"  data-placement="top" data-toggle="tooltip"  placeholder="PassWord" 
                             title="英文和数字的组合，6-12位" tabindex="2" onblur="checkPassword();"
                             onfocus="tipPassword();"><span id="s2" class="tooltip-show tipwarning" 
                             data-placement="right" data-toggle="tooltip" title="密码不能为空"></span>
@@ -97,7 +97,7 @@
                         <span class="glyphicon glyphicon-envelope"></span>
                     </button>
                 </div>
-                <input type="text" class="col-sm-7 form-control tooltip-show" id="email" data-placement="top" data-toggle="tooltip"  placeholder="Email Address" title="输入有效的Email地址" 
+                <input type="text" name="email" class="col-sm-7 form-control tooltip-show" id="email" data-placement="top" data-toggle="tooltip"  placeholder="Email Address" title="输入有效的Email地址" 
                              tabindex="4" onblur="checkEmail();" onfocus="tipEmail();"><span id="s3" 
                              class="tooltip-show tipwarning" data-placement="right" data-toggle="tooltip"  title="邮箱不能为空">
                              </span><span id="s4" class="tooltip-show tipwarning" data-placement="right" data-toggle="tooltip" 
@@ -111,7 +111,7 @@
                         <span class="glyphicon glyphicon-phone"></span>
                     </button>
                 </div>
-                <input type="text" class="col-sm-7 form-control tooltip-show" id="phone" placeholder="能够联系到您的电话号码"data-placement="top" data-toggle="tooltip" title="输入有效的Email地址" 
+                <input type="text" name="phone" class="col-sm-7 form-control tooltip-show" id="phone" placeholder="能够联系到您的电话号码"data-placement="top" data-toggle="tooltip" title="输入有效的电话号码" 
                              tabindex="5" onblur="checkPhone();" onfocus="tipPhone();"><span id="s7" 
                              class="tooltip-show tipwarning" data-placement="right" data-toggle="tooltip"  title="电话不能为空">
                              </span><span id="s8" class="tooltip-show tipwarning" data-placement="right" data-toggle="tooltip" 
@@ -125,7 +125,7 @@
                         <span class="glyphicon glyphicon-globe"></span>
                     </button>
                 </div>
-                <input type="text" class="col-sm-7 form-control tooltip-show" id="address" placeholder="能够定位您的有效地址" data-placement="top" data-toggle="tooltip" 
+                <input type="text" name="address" class="col-sm-7 form-control tooltip-show" id="address" placeholder="能够定位您的有效地址" data-placement="top" data-toggle="tooltip" 
                             title="输入有效地址哦，方便图书交换~" tabindex="6" onblur="checkAddress();"
                             onfocus="tipAddress();"><span id="s10" class="tooltip-show tipwarning" 
                             data-placement="right" data-toggle="tooltip" title="地址不能为空"></span>

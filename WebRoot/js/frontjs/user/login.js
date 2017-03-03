@@ -1,7 +1,7 @@
 //前台的js简单校验
 function checkForm() {
     // 校验用户名
-	var username = document.getElementById("username").value;
+	var username = document.getElementById("nickname").value;
 	if(username == null || username == ''){
 		alert("用户名不能为空!");
 		return false;
@@ -12,16 +12,8 @@ function checkForm() {
 		alert("密码不能为空!");
 		return false;
 	}
-    //检验邮箱格式
-	var email = document.getElementById("email").value;
-	if(email==null || email==""){
-		alert("邮箱不能为空!");
-		return false;
-	}else if(!/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/.test(email)){
-		alert("错误的邮箱格式!");
-		return false;
-	}
-    var verifycode = document.getElementById("verifycode").value;
+
+    var verifycode = document.getElementById("checkcode").value;
 	if(verifycode == null || verifycode == ''){
 		alert("验证码不能为空!");
 		return false;
@@ -36,7 +28,7 @@ function tipUsername(){
     $('#s4').tooltip('hide');
     $('#s5').tooltip('hide');
     $('#s6').tooltip('hide');
-    $('#username').tooltip('toggle');
+    $('#nickname').tooltip('toggle');
 }
 //当获得焦点时进行密码提示
 function tipPassword(){
@@ -46,23 +38,18 @@ function tipPassword(){
     $('#s6').tooltip('hide');
     $('#password').tooltip('toggle');
 }
-//当获得焦点时进行Email提示
-function tipEmail(){
-    $('#s1').tooltip('hide');
-    $('#s6').tooltip('hide');
-    $('#email').tooltip('toggle');
-}
+
 //当获得焦点时进行验证码提示
 function tipVerifyCode(){
     $('#s1').tooltip('hide');
     $('#s2').tooltip('hide');
-    $('#verifycode_input').tooltip('toggle');
+    $('#checkcode').tooltip('toggle');
 }
 
 //当失去焦点检验用户名
 function checkUsername(){
 	// 获得文件框值:
-	var username = document.getElementById("username").value;
+	var username = document.getElementById("nickname").value;
 	if(username==""){
         $('#s1').tooltip('toggle');
 	}else{
@@ -80,22 +67,11 @@ function checkPassword(){
         $('#s2').tooltip('hide');
     }
 }
-//当失去焦点检验邮箱
-function checkEmail(){
-	var email = document.getElementById("email").value;
-	
-	if(email==""){
-		$('#s3').tooltip('toggle');
-	}else if(!/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/.test(email)){
-		$('#s4').tooltip('toggle');
-	}else{
-		$('#s5').tooltip('toggle');
-	}
-}
+
 
 //当失去焦点检验验证码
 function checkVerifyCode(){
-	var verifycode = document.getElementById("verifycode_input").value;
+	var verifycode = document.getElementById("checkcode").value;
 	if(verifycode==""){
 		$('#s6').tooltip('toggle');
 	}else{
@@ -106,6 +82,11 @@ function checkVerifyCode(){
 $(function () {
     $(".tooltip-options span").tooltip({html : true });
 });
+
+function change(){
+	var img1 = document.getElementById("checkImg");
+	img1.src="${pageContext.request.contextPath}/checkImg.action?"+new Date().getTime();
+}
 
 
 

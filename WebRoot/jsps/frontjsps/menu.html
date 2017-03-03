@@ -23,7 +23,7 @@
                 <s:if test="#session.existUser == null">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="user/login.html" target="_top">登录</a></li>
-                        <li><a href="user/register.html" target="_top">注册</a></li>
+                        <li><a href="user/register1.html" target="_top">注册</a></li>
                     </ul>
                 </s:if>
                 <s:else>
@@ -36,9 +36,9 @@
                     </form>
 -->             
                     <ul class="nav navbar-nav">
-                        <li class="active">尊敬的<s:property value="#session.existUser.name"/>欢迎归来</li>
+                        <span class="navbar-text">尊敬的</span><li class="active"><a><s:property value="#session.existUser.nickname"/></a></li><span class="navbar-text">欢迎归来</span>
                     </ul>
-                    <a href="" class="btn btn-primary btn-sm navbar-btn navbar-right">退出</a>
+                    <a href="${ pageContext.request.contextPath }/user_quit.action" class="btn btn-primary btn-sm navbar-btn navbar-right">退出</a>
                     <div class="profile navbar-right">
                         <ul class="nav navbar-nav">
                             <li><a href="user/change.html" target="_top">修改个人信息</a></li>

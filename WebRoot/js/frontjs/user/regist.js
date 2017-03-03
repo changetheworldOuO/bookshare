@@ -4,7 +4,7 @@ function checkForm() {
     var inputdiv = document.getElementsByClassName("form-group");
     
     // 校验用户名
-	var username = document.getElementById("username").value;
+	var username = document.getElementById("nickname").value;
     
 	if(username == null || username == '') {
         alert("用户名不能为空!");
@@ -36,14 +36,14 @@ function checkForm() {
 	}
     
     //校验电话格式
-    var isPhone = /^([0-9]{3,4}-)?[0-9]{7,8}$/;
-    var isMob=/^((\+?86)|(\(\+86\)))?(13[012356789][0-9]{8}|15[012356789][0-9]{8}|18[02356789][0-9]{8}|147[0-9]{8}|1349[0-9]{7})$/;
-	var phone = document.getElementById("phone").value;
+    //var isPhone = /^([0-9]{3,4}-)?[0-9]{7,8}$/;
+    var isMob=/^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+	var phone = document.getElementById("phone").value.trim();
     if(phone == ""){
-        alert("邮箱不能为空!");
+        alert("电话不能为空!");
 		return false;
-	}else if(!isMob.test(phone)||!isPhone.test(phone)){
-		alert("错误的邮箱格式!");
+	}else if(!isMob.test(phone)/*||!isPhone.test(phone)*/){
+		alert("错误的电话格式!");
 		return false;
 	}
     
@@ -133,10 +133,10 @@ function tipAddress(){
 }
 
 //当失去焦点检验用户名
-function checkUsername() {
+function checkUsername(){
 	// 获得文件框值:
-	var username = document.getElementById("username").value;
-	if(username==""){
+	var nickname = document.getElementById("nickname").value;
+	if(nickname==""){
         $('#s1').tooltip('toggle');
 	}else{
         $('#s1').tooltip('hide');
@@ -147,18 +147,33 @@ function checkUsername() {
     xhr.onreadystatechange = function() {
         if(xhr.readyState == 4){
             if(xhr.status == 200){
-				document.getElementById("span1").innerHTML = xhr.responseText;
-				}
-			}
+            	document.getElementById("span1").innerHTML = xhr.responseText;
+            	
+            /*
+            	var msg = xhr.responseText;
+            	var hintusername = document.getElementById("span1");
+            	
+            	if(msg == "true") {
+    				hintusername.className="glyphicon glyphicon-ok";
+    				hintusername.innerHTML = "该用户名可以使用哦~";
+    				CKusername=true;
+    			}
+    			else {
+    				hintusername.className="glyphicon glyphicon-remove";
+    				hintusername.innerHTML="用户名已存在！";
+    				CKusername=false;
+    			}
+            */
+			 }
 		}
+	}
     // 3.打开连接
-    xhr.open("GET","${pageContext.request.contextPath}/user_findByName.action?time="+new Date().getTime()+"&username="+username,true);
+    xhr.open("GET","${pageContext.request.contextPath}/user_findByName.action?time="+new Date().getTime()+"&nickname="+nickname,true);
     // 4.发送
-    xhr.send(null);    
+    xhr.send(null);   
 }
 
-
-// 异步校验用户名
+//异步校验用户名
 function createXmlHttp(){
     var xmlHttp;
     try{ // Firefox, Opera 8.0+, Safari
@@ -178,6 +193,10 @@ function createXmlHttp(){
     return xmlHttp;
 }
 
+function change(){
+	var img1 = document.getElementById("checkImg");
+	img1.src="${pageContext.request.contextPath}/checkImg.action?"+new Date().getTime();
+}
 
 //当失去焦点检验密码框
 function checkPassword(){
@@ -220,13 +239,13 @@ function checkEmail(){
 
 //当失去焦点检验电话
 function checkPhone(){
-    var isPhone = /^([0-9]{3,4}-)?[0-9]{7,8}$/;
-    var isMob=/^((\+?86)|(\(\+86\)))?(13[012356789][0-9]{8}|15[012356789][0-9]{8}|18[02356789][0-9]{8}|147[0-9]{8}|1349[0-9]{7})$/;
-	var phone = document.getElementById("phone").value;
-	
+    //var isPhone = /^([0-9]{3,4}-)?[0-9]{7,8}$/;
+    var isMob=/^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+	var phone = document.getElementById("phone").value.trim();
+	//var phone = $.trim(document.getElementById("phone").value);
 	if(phone==""){
 		$('#s7').tooltip('toggle');
-	}else if(!isMob.test(phone)||!isPhone.test(phone)){
+	}else if((!isMob.test(phone))/*||(!isPhone.test(phone))*/){
 		$('#s8').tooltip('toggle');
 	}else{
 		$('#s9').tooltip('toggle');
@@ -246,9 +265,3 @@ function checkAddress(){
 $(function () {
     $(".tooltip-options span").tooltip({html : true });
 });
-
-
-
-
-
-
