@@ -6,3 +6,7 @@
     border: none;
     padding: 10px;
 }
+
+.header .midmenu ol {
+    height: 32px;
+}

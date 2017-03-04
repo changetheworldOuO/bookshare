@@ -28,8 +28,43 @@
     <div class="container">
         <div class="header">
             <div class="midmenu col-sm-4 col-md-4" style="border:1px solid orange;height:350px;">
-
+                <ol class="breadcrumb">
+	                <li><a href="#">科学</a></li>
+	                <li><a href="#">2016</a></li>
+	                <li class="active">十一月</li>
+                </ol>
+                <ol class="breadcrumb">
+	                <li><a href="#">文学</a></li>
+	                <li><a href="#">2016</a></li>
+	                <li class="active">十一月</li>
+                </ol>
+                <ol class="breadcrumb">
+	                <li><a href="#">娱乐</a></li>
+	                <li><a href="#">2016</a></li>
+	                <li class="active">十一月</li>
+                </ol>
+                <ol class="breadcrumb">
+	                <li><a href="#">体育</a></li>
+	                <li><a href="#">2013</a></li>
+	                <li class="active">十一月</li>
+                </ol>
+                <ol class="breadcrumb">
+	                <li><a href="#">编程</a></li>
+	                <li><a href="#">2016</a></li>
+	                <li class="active">十一月</li>
+                </ol>
+                <ol class="breadcrumb">
+	                <li><a href="#">时事</a></li>
+	                <li><a href="#">2016</a></li>
+	                <li class="active">十一月</li>
+                </ol>
+                <ol class="breadcrumb">
+	                <li><a href="#">杂谈</a></li>
+	                <li><a href="#">2016</a></li>
+	                <li class="active">十一月</li>
+                </ol>
             </div>
+            
             <div class="carousel slide col-sm-8 col-md-8 hidden-xs" id="slideshow" data-interval="2000" data-ride="carousel" style="border:1px solid green;height:350px;">
                 <ol class="carousel-indicators">
                     <li data-target="#slideshow" data-slide-to="0" class="active"></li>
@@ -73,7 +108,12 @@
 				<ul class="tabContent" style="display: block;">
 				    <s:iterator var="p" value="hList">
 				        <li>
-				            <a href="${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#p.pid"/>" target="_blank"><img src="${pageContext.request.contextPath}/<s:property value="#p.image"/>" data-original="http://storage.shopxx.net/demo-image/3.0/201301/0ff130db-0a1b-4b8d-a918-ed9016317009-thumbnail.jpg" style="display: block;"></a>
+<!--				            <a href="${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#p.pid"/>" target="_blank"><img src="${pageContext.request.contextPath}/<s:property value="#p.image"/>" style="display: block;"></a>-->
+                            <img src="../../resources/images/bookimages/01.jpg" alt="">
+                            <img src="../../resources/images/bookimages/02.jpg" alt="">
+                            <img src="../../resources/images/bookimages/03.jpg" alt="">
+                            <img src="../../resources/images/bookimages/04.jpg" alt="">
+                            <img src="../../resources/images/bookimages/05.jpg" alt="">  
 				        </li>
 				    </s:iterator>		
 				</ul>
@@ -84,7 +124,12 @@
                 <ul class="tabContent" style="display: block;">
 				    <s:iterator var="p" value="nList">
 				        <li>
-				            <a href="${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#p.pid"/>" target="_blank"><img src="${pageContext.request.contextPath}/<s:property value="#p.image"/>" data-original="http://storage.shopxx.net/demo-image/3.0/201301/4a51167a-89d5-4710-aca2-7c76edc355b8-thumbnail.jpg" style="display: block;"></a>									
+<!--				            <a href="${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#p.pid"/>" target="_blank"><img src="${pageContext.request.contextPath}/<s:property value="#p.image"/>" style="display: block;"></a>							-->
+				            <img src="../../resources/images/bookimages/01.jpg" alt="">
+                            <img src="../../resources/images/bookimages/02.jpg" alt="">
+                            <img src="../../resources/images/bookimages/03.jpg" alt="">
+                            <img src="../../resources/images/bookimages/04.jpg" alt="">
+                            <img src="../../resources/images/bookimages/05.jpg" alt="">
 				        </li>
 				    </s:iterator>		
 				</ul>
@@ -92,17 +137,29 @@
             
             <h3 style="color:red">3F/xx/xx</h3>
             <div class="well well-lg">
-               
+               <img src="../../resources/images/bookimages/01.jpg" alt="">
+               <img src="../../resources/images/bookimages/02.jpg" alt="">
+               <img src="../../resources/images/bookimages/03.jpg" alt="">
+               <img src="../../resources/images/bookimages/04.jpg" alt="">
+               <img src="../../resources/images/bookimages/05.jpg" alt="">
             </div>
             
             <h3 style="color:red">4F/xx/xx</h3>
             <div class="well well-lg">
-              
+				<img src="../../resources/images/bookimages/01.jpg" alt="">
+                <img src="../../resources/images/bookimages/02.jpg" alt="">
+                <img src="../../resources/images/bookimages/03.jpg" alt="">
+                <img src="../../resources/images/bookimages/04.jpg" alt="">
+                <img src="../../resources/images/bookimages/05.jpg" alt="">              
             </div>
             
             <h3 style="color:red">5F/xx/xx</h3>
             <div class="well well-lg">
-               
+				<img src="../../resources/images/bookimages/01.jpg" alt="">
+                <img src="../../resources/images/bookimages/02.jpg" alt="">
+                <img src="../../resources/images/bookimages/03.jpg" alt="">
+                <img src="../../resources/images/bookimages/04.jpg" alt="">
+                <img src="../../resources/images/bookimages/05.jpg" alt="">                 
             </div>
         </div>
         
