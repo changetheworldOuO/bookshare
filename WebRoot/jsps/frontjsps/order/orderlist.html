@@ -56,7 +56,8 @@
                             </tr>
                             <tr>
                                 <td width="40">
-                                    <img src="${pageContext.request.contextPath}/<s:property value="#cartItem.product.image"/>">
+<!--                                    <img src="${pageContext.request.contextPath}/<s:property value="#cartItem.product.image"/>">-->
+                                   <img src="../../../resources/images/bookimages/%E6%96%87%E5%AD%A601.jpg" alt="" width="50" height="40">
                                     <a target="_blank"><s:property value="#cartItem.product.pname"/></a>
                                 </td>
                                 <td>
@@ -69,7 +70,7 @@
                                     <span class="subtotal">￥<s:property value="#cartItem.subtotal"/></span>
                                 </td>
                                 <td>
-                                    <a href="${ pageContext.request.contextPath }/cart_removeCart.action?pid=<s:property value="#cartItem.product.pid"/>" class="delete">删除</a>
+<!--                                    <a href="${ pageContext.request.contextPath }/cart_removeCart.action?pid=<s:property value="#cartItem.product.pid"/>" class="delete">删除</a>-->
                                 </td>
                             </tr>
                         </s:iterator>
@@ -83,7 +84,7 @@
                     <tbody>
                         <s:iterator var="cartItem" value="#session.cart.cartItems">
                            <div class="orderid" style="width:100%;background:#cecece">
-                               订单号：2<s:property value="#cartItem.product.bid"/>
+                               订单号：936FCAF21DB1FD15<s:property value="#cartItem.product.bid"/>
                            </div>
                             <tr>
                                 <th>图书信息</th>
@@ -94,20 +95,44 @@
                             </tr>
                             <tr>
                                 <td width="40">
-                                    <img src="${pageContext.request.contextPath}/<s:property value="#cartItem.product.image"/>">
+<!--                                    <img src="${pageContext.request.contextPath}/<s:property value="#cartItem.product.image"/>">
+                                   -->
+                                   <img src="../../../resources/images/bookimages/%E6%96%87%E5%AD%A601.jpg" alt="" width="50" height="40"><span>追风筝的人</span>
                                     <a target="_blank"><s:property value="#cartItem.product.pname"/></a>
                                 </td>
                                 <td>
-                                    <a target="_blank"><s:property value="#cartItem.product.pname"/></a>
+                                    <a target="_blank">Eric<s:property value="#cartItem.product.pname"/></a>
                                 </td>
                                 <td class="belong" width="60">
-                                    <s:property value="#cartItem.count"/>
+                                &nbsp; &nbsp;文学<s:property value="#cartItem.count"/>
                                 </td>
                                 <td width="140">
-                                    <span class="subtotal">￥<s:property value="#cartItem.subtotal"/></span>
+                                    <span class="subtotal">123456789<s:property value="#cartItem.subtotal"/></span>
                                 </td>
                                 <td>
-                                    <a href="${ pageContext.request.contextPath }/cart_removeCart.action?pid=<s:property value="#cartItem.product.pid"/>" class="delete">删除</a>
+<!--                                    <a href="${ pageContext.request.contextPath }/cart_removeCart.action?pid=<s:property value="#cartItem.product.pid"/>" class="delete">删除</a>-->
+                               2017-6-8
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="40">
+<!--                                    <img src="${pageContext.request.contextPath}/<s:property value="#cartItem.product.image"/>">
+                                   -->
+                                   <img src="../../../resources/images/bookimages/%E6%96%87%E5%AD%A602.jpg" alt="" width="50" height="40"><span>摆渡人</span>
+                                    <a target="_blank"><s:property value="#cartItem.product.pname"/></a>
+                                </td>
+                                <td>
+                                    <a target="_blank">Eric<s:property value="#cartItem.product.pname"/></a>
+                                </td>
+                                <td class="belong" width="60">
+                                &nbsp; &nbsp;文学<s:property value="#cartItem.count"/>
+                                </td>
+                                <td width="140">
+                                    <span class="subtotal">123456789<s:property value="#cartItem.subtotal"/></span>
+                                </td>
+                                <td>
+<!--                                    <a href="${ pageContext.request.contextPath }/cart_removeCart.action?pid=<s:property value="#cartItem.product.pid"/>" class="delete">删除</a>-->
+                               2017-6-8
                                 </td>
                             </tr>
                         </s:iterator>
