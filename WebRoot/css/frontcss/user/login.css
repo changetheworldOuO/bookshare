@@ -1,10 +1,11 @@
 #fullBg {  
-    z-index: -1;
+    position: absolute;
+    z-index: 1;
     height: 100%;
     width: 100%;
-/*    position: relative;*/
+
     top: 0px;
-/*    background: url('../../../resources/images/indeximages/01.jpg') no-repeat center center fixed; */
+    background: url('../../../resources/images/indeximages/01.jpg') no-repeat center center fixed; 
     background-size: cover;
 }
 
