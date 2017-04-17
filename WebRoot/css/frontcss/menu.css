@@ -1,68 +1,22 @@
-body {
-    padding-top: 0px;
-}
-
-.navbar-inverse input[type="text"] {
-    background: #313131;
-    width: 130%;
-    border: none;
-    color: #999;
-}
-
-.navbar-inverse .navbar-form {
-    position: relative;   
-}
-
-.navbar-inverse button[type="submit"] {
-    position: absolute;
-    top: 25%;
-    right: -40px;
-    background:none;
-    border: none;
-}
-
-@media(min-width:768) {
-    .navbar-inverse button[type="submit"] {
-        top:15%;
-    }
-}
-
-.navbar-inverse .glyphicon {
-    color: #999;
-}
-
 .profile {
     margin-right: 25px;
+}
+
+/* 标签第二部分 */
+.menu2 {
+    background-color: #ff5800;
 }
 
 .categoryli {
     text-decoration-color: white;
 }
 
-.logo {
-    float: left;
-    position: absolute;
-    font-size: 40px;
-    color: #ff5800;
-    padding-left: 25px;
-    margin-top: -20px;
+#menu-form {
+    float: right;
+    padding-left: 20px;
+    padding-top: 5px;
 }
 
-.menu_search {
-   float: left;
-   width: 100%;
-   margin-top:-10px;
-}
-
-.menu_search input {
-    width: 800px;
-    margin-left: 320px;
-    margin-right: 16px;
-}
-
-.buttons  {
-    float: left;
-    position: relative;
-    margin-top: -30px;
-    margin-left: 1135px;
+.mycolor {
+    background: #ff5800;
 }

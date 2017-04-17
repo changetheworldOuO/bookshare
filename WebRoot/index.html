@@ -1,71 +1,69 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <base href="<%=basePath%>">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>欢迎光临BookShare首页</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!-- 新 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/
-    bootstrap.min.css">
+
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="This is my page">
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/frontcss/index.css">
-  </head>
-  
-  <body>
-     <div id="menu" class="topmenu">
-<!--     	<%@ include file="menu.jsp" %>-->
-            <object id="menuobject" type="text/x-scriptlet" data="jsps/frontjsps/menu.html" width=100% height=155></object>
-     </div>
-    
+</head>
+
+<body>
+    <div id="menu" class="topmenu">
+        <!--<object id="menuobject" type="text/x-scriptlet" data="jsps/frontjsps/menu.html" width=100% height=155></object>-->
+    </div>
+    <div class="myblock" style="padding-top:100px;"></div>
     <div class="container">
         <div class="header">
-            <div class="midmenu col-sm-4 col-md-4 hidden-xs" style="border:1px solid orange;height:350px;">
+            <div class="midmenu col-sm-4 col-md-4 hidden-xs">
                 <ol class="breadcrumb">
-	                <li><a href="#">科学</a></li>
-	                <li><a href="#">探索</a></li>
-	                <li class="active">太空</li>
+                    <li><a href="#">科学</a></li>
+                    <li><a href="#">探索</a></li>
+                    <li class="active">太空</li>
                 </ol>
                 <ol class="breadcrumb">
-	                <li><a href="#">文学</a></li>
-	                <li><a href="#">小说</a></li>
-	                <li class="active">玄幻</li>
+                    <li><a href="#">文学</a></li>
+                    <li><a href="#">小说</a></li>
+                    <li class="active">玄幻</li>
                 </ol>
                 <ol class="breadcrumb">
-	                <li><a href="#">娱乐</a></li>
-	                <li><a href="#">综艺</a></li>
-	                <li class="active">吐槽</li>
+                    <li><a href="#">娱乐</a></li>
+                    <li><a href="#">综艺</a></li>
+                    <li class="active">吐槽</li>
                 </ol>
                 <ol class="breadcrumb">
-	                <li><a href="#">体育</a></li>
-	                <li><a href="#">篮球</a></li>
-	                <li class="active">NBA</li>
+                    <li><a href="#">体育</a></li>
+                    <li><a href="#">篮球</a></li>
+                    <li class="active">NBA</li>
                 </ol>
                 <ol class="breadcrumb">
-	                <li><a href="#">编程</a></li>
-	                <li><a href="#">前端</a></li>
-	                <li class="active">BootStrap</li>
+                    <li><a href="#">编程</a></li>
+                    <li><a href="#">前端</a></li>
+                    <li class="active">BootStrap</li>
                 </ol>
                 <ol class="breadcrumb">
-	                <li><a href="#">时事</a></li>
-	                <li><a href="#">政治</a></li>
-	                <li class="active">周边</li>
+                    <li><a href="#">时事</a></li>
+                    <li><a href="#">政治</a></li>
+                    <li class="active">周边</li>
                 </ol>
                 <ol class="breadcrumb">
-	                <li><a href="#">杂谈</a></li>
-	                <li><a href="#">人生</a></li>
-	                <li class="active">故事</li>
+                    <li><a href="#">杂谈</a></li>
+                    <li><a href="#">人生</a></li>
+                    <li class="active">故事</li>
                 </ol>
             </div>
-            
-            <div class="carousel slide col-sm-8 col-md-8" id="slideshow" data-interval="2000" data-ride="carousel" style="border:1px solid green;height:350px;">
+
+            <div class="carousel slide col-sm-8 col-md-8" id="slideshow" data-interval="2000" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#slideshow" data-slide-to="0" class="active"></li>
                     <li data-target="#slideshow" data-slide-to="1"></li>
@@ -99,80 +97,130 @@
                 </a>
             </div>
         </div>
-        
+
         <label for="" style="margin-top:10px;width:1200px;height:5px;background-color:red;"></label>
-        
+
         <div class="content">
-            <h3 style="color:red">1F/xx/xx</h3>
+            <h3 class="floor">1F/xx/xx</h3>
             <div id="hotProduct" class="well well-lg hotProduct clearfix">
-				<ul class="tabContent" style="display: block;">
-				    <s:iterator var="p" value="hList">
-				        <li>
-<!--				            <a href="${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#p.pid"/>" target="_blank"><img src="${pageContext.request.contextPath}/<s:property value="#p.image"/>" style="display: block;"></a>-->
-                            <img src="resources/images/bookimages/01.jpg" alt="">
-                            <img src="resources/images/bookimages/02.jpg" alt="">
-                            <img src="resources/images/bookimages/03.jpg" alt="">
-                            <img src="resources/images/bookimages/04.jpg" alt="">
-                            <img src="resources/images/bookimages/05.jpg" alt="">  
-				        </li>
-				    </s:iterator>		
-				</ul>
-            </div>
-            
-            <h3 style="color:red">2F/xx/xx</h3>
-            <div class="well well-lg">
                 <ul class="tabContent" style="display: block;">
-				    <s:iterator var="p" value="nList">
-				        <li>
-<!--				            <a href="${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#p.pid"/>" target="_blank"><img src="${pageContext.request.contextPath}/<s:property value="#p.image"/>" style="display: block;"></a>							-->
-				            <img src="resources/images/bookimages/01.jpg" alt="">
-                            <img src="resources/images/bookimages/02.jpg" alt="">
-                            <img src="resources/images/bookimages/03.jpg" alt="">
-                            <img src="resources/images/bookimages/04.jpg" alt="">
-                            <img src="resources/images/bookimages/05.jpg" alt="">
-				        </li>
-				    </s:iterator>		
-				</ul>
+                    <!-- 
+                    <s:iterator var="p" value="hList">
+                        <li>
+				            <a href="${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#p.pid"/>" target="_blank">    <img src="${pageContext.request.contextPath}/<s:property value="#p.image"/>" style="display: block;">
+                            </a>
+                    -->
+                    <li>
+                        <img src="resources/images/bookimages/01.jpg" alt="">
+                        <img src="resources/images/bookimages/02.jpg" alt="">
+                        <img src="resources/images/bookimages/03.jpg" alt="">
+                        <img src="resources/images/bookimages/04.jpg" alt="">
+                        <img src="resources/images/bookimages/05.jpg" alt="">
+                    </li>
+                    <!-- </s:iterator>-->
+                </ul>
             </div>
-            
-            <h3 style="color:red">3F/xx/xx</h3>
-            <div class="well well-lg">
-               <img src="resources/images/bookimages/01.jpg" alt="">
-               <img src="resources/images/bookimages/02.jpg" alt="">
-               <img src="resources/images/bookimages/03.jpg" alt="">
-               <img src="resources/images/bookimages/04.jpg" alt="">
-               <img src="resources/images/bookimages/05.jpg" alt="">
+
+            <h3 class="floor">2F/xx/xx</h3>
+            <div id="hotProduct" class="well well-lg hotProduct clearfix">
+                <ul class="tabContent" style="display: block;">
+                    <!-- 
+                    <s:iterator var="p" value="hList">
+                        <li>
+				            <a href="${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#p.pid"/>" target="_blank">    <img src="${pageContext.request.contextPath}/<s:property value="#p.image"/>" style="display: block;">
+                            </a>
+                    -->
+                    <li>
+                        <img src="resources/images/bookimages/01.jpg" alt="">
+                        <img src="resources/images/bookimages/02.jpg" alt="">
+                        <img src="resources/images/bookimages/03.jpg" alt="">
+                        <img src="resources/images/bookimages/04.jpg" alt="">
+                        <img src="resources/images/bookimages/05.jpg" alt="">
+                    </li>
+                    <!-- </s:iterator>-->
+                </ul>
             </div>
-            
-            <h3 style="color:red">4F/xx/xx</h3>
-            <div class="well well-lg">
-				<img src="resources/images/bookimages/01.jpg" alt="">
-                <img src="resources/images/bookimages/02.jpg" alt="">
-                <img src="resources/images/bookimages/03.jpg" alt="">
-                <img src="resources/images/bookimages/04.jpg" alt="">
-                <img src="resources/images/bookimages/05.jpg" alt="">              
+
+            <h3 class="floor">3F/xx/xx</h3>
+            <div id="hotProduct" class="well well-lg hotProduct clearfix">
+                <ul class="tabContent" style="display: block;">
+                    <!-- 
+                    <s:iterator var="p" value="hList">
+                        <li>
+				            <a href="${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#p.pid"/>" target="_blank">    <img src="${pageContext.request.contextPath}/<s:property value="#p.image"/>" style="display: block;">
+                            </a>
+                    -->
+                    <li>
+                        <img src="resources/images/bookimages/01.jpg" alt="">
+                        <img src="resources/images/bookimages/02.jpg" alt="">
+                        <img src="resources/images/bookimages/03.jpg" alt="">
+                        <img src="resources/images/bookimages/04.jpg" alt="">
+                        <img src="resources/images/bookimages/05.jpg" alt="">
+                    </li>
+                    <!-- </s:iterator>-->
+                </ul>
             </div>
-            
-            <h3 style="color:red">5F/xx/xx</h3>
-            <div class="well well-lg">
-				<img src="resources/images/bookimages/01.jpg" alt="">
-                <img src="resources/images/bookimages/02.jpg" alt="">
-                <img src="resources/images/bookimages/03.jpg" alt="">
-                <img src="resources/images/bookimages/04.jpg" alt="">
-                <img src="resources/images/bookimages/05.jpg" alt="">                 
+
+            <h3 class="floor">4F/xx/xx</h3>
+            <div id="hotProduct" class="well well-lg hotProduct clearfix">
+                <ul class="tabContent" style="display: block;">
+                    <!-- 
+                    <s:iterator var="p" value="hList">
+                        <li>
+				            <a href="${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#p.pid"/>" target="_blank">    <img src="${pageContext.request.contextPath}/<s:property value="#p.image"/>" style="display: block;">
+                            </a>
+                    -->
+                    <li>
+                        <img src="resources/images/bookimages/01.jpg" alt="">
+                        <img src="resources/images/bookimages/02.jpg" alt="">
+                        <img src="resources/images/bookimages/03.jpg" alt="">
+                        <img src="resources/images/bookimages/04.jpg" alt="">
+                        <img src="resources/images/bookimages/05.jpg" alt="">
+                    </li>
+                    <!-- </s:iterator>-->
+                </ul>
+            </div>
+
+            <h3 class="floor">5F/xx/xx</h3>
+            <div id="hotProduct" class="well well-lg hotProduct clearfix">
+                <ul class="tabContent" style="display: block;">
+                    <!-- 
+                    <s:iterator var="p" value="hList">
+                        <li>
+				            <a href="${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#p.pid"/>" target="_blank">    <img src="${pageContext.request.contextPath}/<s:property value="#p.image"/>" style="display: block;">
+                            </a>
+                    -->
+                    <li>
+                        <img src="resources/images/bookimages/01.jpg" alt="">
+                        <img src="resources/images/bookimages/02.jpg" alt="">
+                        <img src="resources/images/bookimages/03.jpg" alt="">
+                        <img src="resources/images/bookimages/04.jpg" alt="">
+                        <img src="resources/images/bookimages/05.jpg" alt="">
+                    </li>
+                    <!-- </s:iterator>-->
+                </ul>
             </div>
         </div>
-        
+
         <div class="footer">
-            
+
         </div>
     </div>
-    
+
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-	<script src="resources/plugins/bootstrap/js/jquery.min.js"></script>
+    <script src="resources/plugins/bootstrap/js/jquery.min.js"></script>
     <script src="resources/plugins/bootstrap/js/bootstrap.min.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> 
-  </body>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <script>
+        /*导入页面*/
+        $(document).ready(function() {
+            $("#menu").load("jsps/frontjsps/menu.html");
+        });
+    </script>
+
+</body>
+
 </html>

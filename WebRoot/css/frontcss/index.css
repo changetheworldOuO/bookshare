@@ -1,18 +1,16 @@
-.well {
-   height: 250px;
+.container .header .midmenu {
+   height: 350px;
 }
 
-.booklist div {
-    border: none;
-    padding: 10px;
-}
-
-.header .midmenu ol {
+.container .header .midmenu ol {
     height: 32px;
 }
 
-@media(min-width:768) {
-    #menuobject {
-        
-    }
+.content li {
+    list-style: none;
 }
+
+.floor {
+    color: red;
+}
+

@@ -1,99 +1,70 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-  <head>
-	<!-- 新 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/frontcss/menu.css">
-    <link rel="stylesheet" href="../../resources/plugins/bootstrap/css/bootstrap.min.css">
-  </head>
-  
-  <body>
-     <nav class="navbar navbar-inverse navbar-fixed-top">
-       <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggle" data-toggle="collapse" data-target="#responsive-navbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="#" class="navbar-brand"><strong>BookShare</strong><small>大型图书共享系统</small></a>
-            </div>
-            
-            <div class="collapse navbar-collapse" id="responsive-navbar">
-                <s:if test="#session.existUser == null">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="user/login.html" target="_top">登录</a></li>
-                        <li><a href="user/regist1.html" target="_top">注册</a></li>
-                    </ul>
-                </s:if>
-                <s:else>
-<!--                
-                    <form action="" class="navbar-form navbar-left">
-                        <input type="text" placeholder="搜索" class="form-control">
-                        <button type="submit">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </form>
--->             
-<!--                   <s:property value="#session.existUser.nickname"/>-->
-                    <ul class="nav navbar-nav">
-                        <span class="navbar-text">尊敬的</span><li class="active"><a>Eric</a></li><span class="navbar-text">欢迎归来</span>
-                    </ul>
-                    <a href="${ pageContext.request.contextPath }/user_quit.action" class="btn btn-primary btn-sm navbar-btn navbar-right">退出</a>
-                    <div class="profile navbar-right">
-                        <ul class="nav navbar-nav">
-                            <li><a href="user/change.html" target="_top">修改个人信息</a></li>
-                            <li><a href="">我的收藏</a></li>
-                            <li><a href="">我的借阅</a></li>
-                            <li><a href="">我的上传</a></li>
-                            <li><a href="">我的积分</a></li>
-                        </ul>
-                    </div>
-                </s:else>
-            
-            </div>
-       </div>
-   </nav>
-
-   <nav class="navbar navbar-inverse" style="margin-top:40px;background-color:#ff5800;">
-        <div class="container">
-           <div class="profile navbar-left">
+<link rel="stylesheet" href="css/frontcss/menu.css">
+<link rel="stylesheet" href="../../../css/frontcss/menu.css">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#responsive-navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand"><strong>BookShare</strong><small>大型图书共享系统</small></a>
+        </div>
+        <div class="collapse navbar-collapse" id="responsive-navbar">
+            <!--<s:if test="#session.existUser == null">-->
             <ul class="nav navbar-nav">
-                <li class="active categoryli"><a href="${ pageContext.request.contextPath }/index.action">&nbsp;&nbsp;&nbsp;首页&nbsp;&nbsp;&nbsp; </a></li>
+                <li class="active"><a href="jsps/frontjsps/user/login.html" target="_top">登录</a></li>
+                <li><a href="jsps/frontjsps/user/regist1.html" target="_top">注册</a></li>
+            </ul>
+            <!--</s:if>-->
+            <!--<s:else>-->
+
+            <!-- <s:property value="#session.existUser.nickname"/>-->
+            <ul class="nav navbar-nav">
+                <span class="navbar-text">尊敬的</span>
+                <li class="active"><a>Eric</a></li><span class="navbar-text">欢迎归来</span>
+            </ul>
+            <!--<a href="${ pageContext.request.contextPath }/user_quit.action" class="btn btn-primary btn-sm navbar-btn navbar-right">退出</a>-->
+            <a href="jsps/frontjsps/user/login.html" class="btn btn-primary btn-sm navbar-btn navbar-right">退出</a>
+            <div class="profile navbar-right">
+                <ul class="nav navbar-nav">
+                    <li><a href="jsps/frontjsps/user/change.html" target="_top">修改个人信息</a></li>
+                    <li><a href="#">我的收藏</a></li>
+                    <li><a href="#">我的借阅</a></li>
+                    <li><a href="#">我的上传</a></li>
+                    <li><a href="#">我的积分</a></li>
+                </ul>
+            </div>
+            <!--</s:else>-->
+        </div>
+        
+        <div class="collapse navbar-collapse navbar-left menu2 hidden-xs" id="responsive-navbar2">
+            <ul class="nav navbar-nav">
+                <li class="active categoryli">
+                    <!--<a href="${ pageContext.request.contextPath }/index.action">&nbsp;&nbsp;&nbsp;首页&nbsp;&nbsp;&nbsp; </a>-->
+                    <a href="index.html">&nbsp;&nbsp;&nbsp;首页&nbsp;&nbsp;&nbsp; </a>
+                </li>
                 <!--
                 <s:iterator var="c" value="#session.cList">
                     <li><a href="${ pageContext.request.contextPath }/product_findByCid.action?cid=<s:property value='#c.cid'/>&page=1"><s:property value="#c.cname"/></a> |</li>
                 </s:iterator>
                 -->
-                <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;<strong>科技</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</a></li>
-                <li><a href="#"><strong>文学</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</a></li>
-                <li><a href="#"><strong>娱乐</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</a></li>
-                <li><a href="#"><strong>体育</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</a></li>
-                <li><a href="#"><strong>编程</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</a></li>
-                <li><a href="#"><strong>时事</strong>  </a></li>
+                <li><a href="#">&nbsp;&nbsp;&nbsp;<strong>科技</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</a></li>
+                <li><a href="#">&nbsp;&nbsp;&nbsp;<strong>文学</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</a></li>
+                <li><a href="#">&nbsp;&nbsp;&nbsp;<strong>娱乐</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</a></li>
+                <li><a href="#">&nbsp;&nbsp;&nbsp;<strong>体育</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</a></li>
+                <li><a href="#">&nbsp;&nbsp;&nbsp;<strong>编程</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</a></li>
+                <li><a href="#">&nbsp;&nbsp;&nbsp;<strong>时事</strong></a></li>
             </ul>
         </div>
-        </div>
-   </nav>
-   
-   <div >
-        <span class="logo">BookShare</span>
-        <form action="" role="form" class="form-horizontal" >
-            <div class="menu_search form-group">
-                <input type="text" class="form-control col-sm-10" placeholder="高级搜索">
-                <div class="buttons col-sm-2">
-                    <button class="btn-warning" style="background:#ff5800">&nbsp;&nbsp;&nbsp;搜&nbsp;&nbsp;&nbsp;索&nbsp;&nbsp;&nbsp;</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <button class="btn-warning" style="background:#ff5800">高级搜索</button>
-                </div>
+        <form action="" role="form" class="form-inline hidden-xs" id="menu-form">
+            <div class="form-group">
+                <input type="text" id="menu-search" class="form-control" placeholder="搜索">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-warning mycolor" type="submit">搜索</button>
+                <button class="btn btn-warning mycolor" type="submit">高级搜索</button>
             </div>
         </form>
-   </div>
-    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-	<script src="../../resources/plugins/bootstrap/js/jquery.min.js"></script>
-    <script src="../../resources/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    
-  </body>
-</html>
+    </div>
+</nav>
