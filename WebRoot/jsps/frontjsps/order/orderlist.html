@@ -1,52 +1,44 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
-  <head>
-    <base href="<%=basePath%>">
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>订单列表</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!-- 新 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/
-    bootstrap.min.css">
+
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../resources/plugins/bootstrap/css/bootstrap.min.css">
-  </head>
-  
-  
-  <body>
+</head>
+
+<body>
     <div id="menu" class="topmenu">
-<!--     	<%@ include file="menu.jsp" %>-->
-<!--            <object type="text/x-scriptlet" data="../menu.html" width=100% height=152></object>-->
+        <!--     	<%@ include file="menu.jsp" %>-->
+        <!--        <object type="text/x-scriptlet" data="../menu.html" width=100% height=152></object>-->
     </div>
     <div class="myblock" style="padding-top:100px;"></div>
     <div class="container">
         <h2 style="color:#ff5800">全部订单</h2>
         <hr>
-        
+
         <ul id="myTab" class="nav nav-tabs" style="color:#ff5800;">
-            <li class="active"><a href="#all" data-toggle="tab">
-                    全部</a>
-            </li>
+            <li class="active"><a href="#all" data-toggle="tab">全部</a></li>
             <li><a href="#reading" data-toggle="tab">阅读中</a></li>
             <li><a href="#returned" data-toggle="tab">已归还</a></li>
-            <li><a href="#needreturn" data-toggle="tab">未归还</a></li>            
+            <li><a href="#needreturn" data-toggle="tab">未归还</a></li>
         </ul>
-        
-        <div id="myTabContent" class="tab-content">  
-    <!--        全部   -->
+
+        <div id="myTabContent" class="tab-content">
+            <!--   全部   -->
             <div id="all" class="tab-pane fade in active">
                 <table class="table">
                     <tbody>
                         <s:iterator var="cartItem" value="#session.cart.cartItems">
-                           <div class="orderid" style="width:100%;background:#cecece">
-                               订单号：1<s:property value="#cartItem.product.bid"/>
-                           </div>
+                            <div class="orderid" style="width:100%;background:#cecece">
+                                订单号：1<s:property value="#cartItem.product.bid" />
+                            </div>
                             <tr>
                                 <th>图书信息</th>
                                 <th>持有人</th>
@@ -56,21 +48,21 @@
                             </tr>
                             <tr>
                                 <td width="40">
-<!--                                    <img src="${pageContext.request.contextPath}/<s:property value="#cartItem.product.image"/>">-->
-                                   <img src="../../../resources/images/bookimages/%E6%96%87%E5%AD%A601.jpg" alt="" width="50" height="40">
-                                    <a target="_blank"><s:property value="#cartItem.product.pname"/></a>
+                                    <!--<img src="${pageContext.request.contextPath}/<s:property value="#cartItem.product.image"/>">-->
+                                    <img src="../../../resources/images/bookimages/%E6%96%87%E5%AD%A601.jpg" alt="" width="50" height="40">
+                                    <a target="_blank"><s:property value="#cartItem.product.pname" /></a>
                                 </td>
                                 <td>
-                                    <a target="_blank"><s:property value="#cartItem.product.pname"/></a>
+                                    <a target="_blank"><s:property value="#cartItem.product.pname" /></a>
                                 </td>
                                 <td class="belong" width="60">
-                                    <s:property value="#cartItem.count"/>
+                                    <s:property value="#cartItem.count" />
                                 </td>
                                 <td width="140">
                                     <span class="subtotal">￥<s:property value="#cartItem.subtotal"/></span>
                                 </td>
                                 <td>
-<!--                                    <a href="${ pageContext.request.contextPath }/cart_removeCart.action?pid=<s:property value="#cartItem.product.pid"/>" class="delete">删除</a>-->
+                                    <!--<a href="${ pageContext.request.contextPath }/cart_removeCart.action?pid=<s:property value="#cartItem.product.pid"/>" class="delete">删除</a>-->
                                 </td>
                             </tr>
                         </s:iterator>
@@ -78,14 +70,14 @@
                 </table>
             </div>
 
-    <!--        阅读中   -->
+            <!--  阅读中   -->
             <div id="reading" class="tab-pane fade">
                 <table class="table">
                     <tbody>
                         <s:iterator var="cartItem" value="#session.cart.cartItems">
-                           <div class="orderid" style="width:100%;background:#cecece">
-                               订单号：936FCAF21DB1FD15<s:property value="#cartItem.product.bid"/>
-                           </div>
+                            <div class="orderid" style="width:100%;background:#cecece">
+                                订单号：936FCAF21DB1FD15<s:property value="#cartItem.product.bid" />
+                            </div>
                             <tr>
                                 <th>图书信息</th>
                                 <th>持有人</th>
@@ -95,44 +87,44 @@
                             </tr>
                             <tr>
                                 <td width="40">
-<!--                                    <img src="${pageContext.request.contextPath}/<s:property value="#cartItem.product.image"/>">
+                                    <!--<img src="${pageContext.request.contextPath}/<s:property value="#cartItem.product.image"/>">
                                    -->
-                                   <img src="../../../resources/images/bookimages/%E6%96%87%E5%AD%A601.jpg" alt="" width="50" height="40"><span>追风筝的人</span>
-                                    <a target="_blank"><s:property value="#cartItem.product.pname"/></a>
+                                    <img src="../../../resources/images/bookimages/%E6%96%87%E5%AD%A601.jpg" alt="" width="50" height="40"><span>追风筝的人</span>
+                                    <a target="_blank"><s:property value="#cartItem.product.pname" /></a>
                                 </td>
                                 <td>
                                     <a target="_blank">Eric<s:property value="#cartItem.product.pname"/></a>
                                 </td>
                                 <td class="belong" width="60">
-                                &nbsp; &nbsp;文学<s:property value="#cartItem.count"/>
+                                    &nbsp; &nbsp;文学<s:property value="#cartItem.count" />
                                 </td>
                                 <td width="140">
                                     <span class="subtotal">123456789<s:property value="#cartItem.subtotal"/></span>
                                 </td>
                                 <td>
-<!--                                    <a href="${ pageContext.request.contextPath }/cart_removeCart.action?pid=<s:property value="#cartItem.product.pid"/>" class="delete">删除</a>-->
-                               2017-6-8
+                                    <!--<a href="${ pageContext.request.contextPath }/cart_removeCart.action?pid=<s:property value="#cartItem.product.pid"/>" class="delete">删除</a>-->
+                                    2017-6-8
                                 </td>
                             </tr>
                             <tr>
                                 <td width="40">
-<!--                                    <img src="${pageContext.request.contextPath}/<s:property value="#cartItem.product.image"/>">
+                                    <!--<img src="${pageContext.request.contextPath}/<s:property value="#cartItem.product.image"/>">
                                    -->
-                                   <img src="../../../resources/images/bookimages/%E6%96%87%E5%AD%A602.jpg" alt="" width="50" height="40"><span>摆渡人</span>
-                                    <a target="_blank"><s:property value="#cartItem.product.pname"/></a>
+                                    <img src="../../../resources/images/bookimages/%E6%96%87%E5%AD%A602.jpg" alt="" width="50" height="40"><span>摆渡人</span>
+                                    <a target="_blank"><s:property value="#cartItem.product.pname" /></a>
                                 </td>
                                 <td>
                                     <a target="_blank">Eric<s:property value="#cartItem.product.pname"/></a>
                                 </td>
                                 <td class="belong" width="60">
-                                &nbsp; &nbsp;文学<s:property value="#cartItem.count"/>
+                                    &nbsp; &nbsp;文学<s:property value="#cartItem.count" />
                                 </td>
                                 <td width="140">
                                     <span class="subtotal">123456789<s:property value="#cartItem.subtotal"/></span>
                                 </td>
                                 <td>
-<!--                                    <a href="${ pageContext.request.contextPath }/cart_removeCart.action?pid=<s:property value="#cartItem.product.pid"/>" class="delete">删除</a>-->
-                               2017-6-8
+                                    <!--<a href="${ pageContext.request.contextPath }/cart_removeCart.action?pid=<s:property value="#cartItem.product.pid"/>" class="delete">删除</a>-->
+                                    2017-6-8
                                 </td>
                             </tr>
                         </s:iterator>
@@ -140,15 +132,14 @@
                 </table>
             </div>
 
-
-    <!--       已归还   -->
+            <!--   已归还   -->
             <div id="returned" class="tab-pane fade">
                 <table class="table">
                     <tbody>
                         <s:iterator var="cartItem" value="#session.cart.cartItems">
-                           <div class="orderid" style="width:100%;background:#cecece">
-                               订单号：3<s:property value="#cartItem.product.bid"/>
-                           </div>
+                            <div class="orderid" style="width:100%;background:#cecece">
+                                订单号：3<s:property value="#cartItem.product.bid" />
+                            </div>
                             <tr>
                                 <th>图书信息</th>
                                 <th>持有人</th>
@@ -158,20 +149,20 @@
                             </tr>
                             <tr>
                                 <td width="40">
-                                    <img src="${pageContext.request.contextPath}/<s:property value="#cartItem.product.image"/>">
-                                    <a target="_blank"><s:property value="#cartItem.product.pname"/></a>
+                                    <img src="${pageContext.request.contextPath}/<s:property value=" #cartItem.product.image "/>">
+                                    <a target="_blank"><s:property value="#cartItem.product.pname" /></a>
                                 </td>
                                 <td>
-                                    <a target="_blank"><s:property value="#cartItem.product.pname"/></a>
+                                    <a target="_blank"><s:property value="#cartItem.product.pname" /></a>
                                 </td>
                                 <td class="belong" width="60">
-                                    <s:property value="#cartItem.count"/>
+                                    <s:property value="#cartItem.count" />
                                 </td>
                                 <td width="140">
                                     <span class="subtotal">￥<s:property value="#cartItem.subtotal"/></span>
                                 </td>
                                 <td>
-                                    <a href="${ pageContext.request.contextPath }/cart_removeCart.action?pid=<s:property value="#cartItem.product.pid"/>" class="delete">删除</a>
+                                    <a href="${ pageContext.request.contextPath }/cart_removeCart.action?pid=<s:property value=" #cartItem.product.pid "/>" class="delete">删除</a>
                                 </td>
                             </tr>
                         </s:iterator>
@@ -179,14 +170,14 @@
                 </table>
             </div>
 
-    <!--       未归还   -->
+            <!--    未归还   -->
             <div id="needreturn" class="tab-pane fade">
                 <table class="table">
                     <tbody>
                         <s:iterator var="cartItem" value="#session.cart.cartItems">
-                           <div class="orderid" style="width:100%;background:#cecece">
-                               订单号：4<s:property value="#cartItem.product.bid"/>
-                           </div>
+                            <div class="orderid" style="width:100%;background:#cecece">
+                                订单号：4<s:property value="#cartItem.product.bid" />
+                            </div>
                             <tr>
                                 <th>图书信息</th>
                                 <th>持有人</th>
@@ -196,44 +187,44 @@
                             </tr>
                             <tr>
                                 <td width="40">
-                                    <img src="${pageContext.request.contextPath}/<s:property value="#cartItem.product.image"/>">
-                                    <a target="_blank"><s:property value="#cartItem.product.pname"/></a>
+                                    <img src="${pageContext.request.contextPath}/<s:property value=" #cartItem.product.image "/>">
+                                    <a target="_blank"><s:property value="#cartItem.product.pname" /></a>
                                 </td>
                                 <td>
-                                    <a target="_blank"><s:property value="#cartItem.product.pname"/></a>
+                                    <a target="_blank"><s:property value="#cartItem.product.pname" /></a>
                                 </td>
                                 <td class="belong" width="60">
-                                    <s:property value="#cartItem.count"/>
+                                    <s:property value="#cartItem.count" />
                                 </td>
                                 <td width="140">
                                     <span class="subtotal">￥<s:property value="#cartItem.subtotal"/></span>
                                 </td>
                                 <td>
-                                    <a href="${ pageContext.request.contextPath }/cart_removeCart.action?pid=<s:property value="#cartItem.product.pid"/>" class="delete">删除</a>
+                                    <a href="${ pageContext.request.contextPath }/cart_removeCart.action?pid=<s:property value=" #cartItem.product.pid "/>" class="delete">删除</a>
                                 </td>
                             </tr>
                         </s:iterator>
                     </tbody>
                 </table>
             </div>
-             
-        </div> 
+
+        </div>
     </div>
-       
+
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-	<script src="../../../resources/plugins/bootstrap/js/jquery.min.js"></script>
+    <script src="../../../resources/plugins/bootstrap/js/jquery.min.js"></script>
     <script src="../../../resources/plugins/bootstrap/js/bootstrap.min.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> 
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="../../../js/frontjs/order/orderlist.js"></script>
-        <script>
+    <script>
         /*导入页面*/
         $(document).ready(function() {
             $("#menu").load("../menu.html");
         });
     </script>
-    
-  </body>
+
+</body>
+
 </html>
-  

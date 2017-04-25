@@ -1,50 +1,44 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
-  <head>
-    <base href="<%=basePath%>">
+
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>用户登录</title>
 
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!-- 新 Bootstrap 核心 CSS 文件 -->
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../resources/plugins/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../../../css/frontcss/user/login.css">
-	
-  </head>
-    
-  <body>
-    <div id="fullBg"></div>
-    
-    <div class="container">
+    <link rel="stylesheet" href="../../../css/frontcss/user/login.css">
+</head>
 
+<body>
+    <div id="fullBg"></div>
+
+    <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
                 <form role="form" action="" method="post" onsubmit="return checkForm();">
                     <h1 style="color:orange;">BookShare<small>平台登录</small></h1>
                     <hr class="colorgraph">
                     <div><s:actionerror /></div>
+                    
                     <div class="form-group">
-                       <div class="col-xs-2 col-sm-1 col-md-1" style="margin-left:-15px;">
+                        <div class="col-xs-2 col-sm-1 col-md-1" style="margin-left:-15px;">
                             <button class="btn btn-info btn-lg">
                                 <span class="glyphicon glyphicon-user"></span>
                             </button>
                         </div>
                         <div class="col-xs-10 col-sm-11 col-md-11" style="margin-left:15px;">
-                            <input type="text" name="nickname" id="nickname" class="form-control input-lg tooltip-show" 
-                            data-placement="top" data-toggle="tooltip"  placeholder="UserName" tabindex="1" 
-                            title="输入您的用户名"  onblur="checkUsername();" onclick="tipUsername();" autofocus>
-                            <span id="s1" class="tooltip-show tipwarning" data-placement="top" data-toggle="tooltip" 
-                        title="用户名不能为空"></span>
+                            <input type="text" name="nickname" id="nickname" class="form-control input-lg tooltip-show" data-placement="top" data-toggle="tooltip" placeholder="UserName" tabindex="1" title="输入您的用户名" onblur="checkUsername();" onclick="tipUsername();" autofocus>
+                            <span id="s1" class="tooltip-show tipwarning" data-placement="top" data-toggle="tooltip" title="用户名不能为空"></span>
                         </div>
                     </div>
+                    
                     <div class="form-group">
                         <div class="col-xs-2 col-sm-1 col-md-1" style="margin-left:-15px;">
                             <button class="btn btn-info btn-lg">
@@ -52,17 +46,14 @@
                             </button>
                         </div>
                         <div class="col-xs-10 col-sm-11 col-md-11" style="margin-left:15px;">
-                            <input type="password" name="password" id="password" class="form-control input-lg tooltip-show" 
-                            data-placement="right" data-toggle="tooltip"  placeholder="PassWord" 
-                            title="密码一定要输入正确哦" tabindex="2" onblur="checkPassword();"
-                            onfocus="tipPassword();"><span id="s2" class="tooltip-show tipwarning" 
-                            data-placement="top" data-toggle="tooltip" title="密码不能为空"></span>
+                            <input type="password" name="password" id="password" class="form-control input-lg tooltip-show" data-placement="right" data-toggle="tooltip" placeholder="PassWord" title="密码一定要输入正确哦" tabindex="2" onblur="checkPassword();" onfocus="tipPassword();"><span id="s2" class="tooltip-show tipwarning" data-placement="top" data-toggle="tooltip" title="密码不能为空"></span>
                         </div>
                     </div>
-                    <div class="row"  style="margin-left: -5px;">
+                    
+                    <div class="form-group" style="margin-left: -5px;">
                         <div class="col-sm-offset-1 col-md-offset-1 col-xs-6 col-sm-8 col-md-7">
                             <div class="form-group">
-                                <input type="text" name="checkcode" id="checkcode" class="form-control input-lg tooltip-show" placement="right" data-toggle="tooltip"  placeholder="VerifyCode" title="输入验证码完成登录" tabindex="4" onblur="checkVerifyCode();" onfocus="tipVerifyCode();" maxlength="4" autocomplete="off"><span id="s6" class="tooltip-show tipwarning2" data-placement="top" data-toggle="tooltip" title="验证码不能为空"></span><span id="s7" class="tooltip-show tipwarning2" data-placement="top" data-toggle="tooltip" title="验证码错误"></span>
+                                <input type="text" name="checkcode" id="checkcode" class="form-control input-lg tooltip-show" placement="right" data-toggle="tooltip" placeholder="VerifyCode" title="输入验证码完成登录" tabindex="4" onblur="checkVerifyCode();" onfocus="tipVerifyCode();" maxlength="4" autocomplete="off"><span id="s6" class="tooltip-show tipwarning2" data-placement="top" data-toggle="tooltip" title="验证码不能为空"></span><span id="s7" class="tooltip-show tipwarning2" data-placement="top" data-toggle="tooltip" title="验证码错误"></span>
                             </div>
                         </div>
                         <div class="col-xs-6 col-sm-3 col-md-4" style="margin-left:-50px;margin-top:8px;">
@@ -71,7 +62,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row" style="margin-left: 15px;">
+                    
+                    <div class="form-group" style="margin-left: 15px;">
                         <div class="col-xs-3 col-sm-3 col-md-3">
                             <span class="button-checkbox">
                                 <button type="button" class="btn btn-info" data-color="info" tabindex="6">小贴士</button>
@@ -79,28 +71,29 @@
                             </span>
                         </div>
                         <div class="col-xs-9 col-sm-9 col-md-9">
-                             还没有账号？点击 <strong class="label label-primary">Register</strong>, 来注册一个属于你的账号吧 <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a>已有账号？ 马上登陆吧！
+                            还没有账号？点击 <strong class="label label-primary">Register</strong>, 来注册一个属于你的账号吧 <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a>已有账号？ 马上登陆吧！
                         </div>
                     </div>
 
                     <hr class="colorgraph">
-                    <div class="row">
+                    <div class="form-group">
                         <div class="col-xs-6 col-md-6"><input type="submit" value="Sign In" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
-                        <div class="col-xs-6 col-md-6"><a href="../user/regist1.html" class="btn btn-success btn-block btn-lg" >Register</a></div>
+                        <div class="col-xs-6 col-md-6"><a href="../user/regist1.html" class="btn btn-success btn-block btn-lg">Register</a></div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-  	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-	<!--当没有网时，加载本地的-->
-		<script src="../../../resources/plugins/bootstrap/js/jquery.min.js"></script>
+    <!--当没有网时，加载本地的-->
+    <script src="../../../resources/plugins/bootstrap/js/jquery.min.js"></script>
     <script src="../../../resources/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../../resources/plugins/bootstrap/js/fileinput.min.js"></script>
     <script src="../../../resources/plugins/bootstrap/js/zh.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="../../../js/frontjs/user/login.js"></script>
-  </body>
+</body>
+
 </html>
