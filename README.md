@@ -1,4 +1,4 @@
-﻿# 产学研之基于O2O的图书共享系统
+# 产学研之基于O2O的图书共享系统
 ----------
 
 > [页面效果展示https://change-theworld.github.io/bookshare/WebRoot/index.html](https://change-theworld.github.io/bookshare/WebRoot/index.html)
@@ -40,3 +40,5 @@
 
 > 目前项目已经完成了50%以上，我负责界面的设计与实现，现在主要页面以及设计完成，一些细节还有待改善，后端的User模块也是由我来完成的，通过这次产学研我还是学到了蛮多东西的，我们团队会继续加油，争取交上一份满意的作品~
 >> ps:第一次写Markdown格式的文档，感觉超好用，值得推荐~
+
+## 后记
